@@ -1,0 +1,97 @@
+@import "../index.scss";
+
+$break-flg-1: 650px;
+
+.side-panel {
+  background-color: getRGB($primary);
+  color: getRGBA($secondary, 0.75);
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  width: 7rem;
+  z-index: 1000;
+  transition: 0.5s ease;
+  user-select: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &.opened {
+    left: 0;
+  }
+  @media (max-width: $break-flg-1) {
+    position: absolute;
+    left: -7rem;
+  }
+}
+
+.side-panel-content {
+  position: relative;
+
+  .side-panel-brand {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid getRGB($secondary);
+
+    .brand-link {
+      padding: 0.25rem;
+      background-color: getRGB($secondary);
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-icon {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  .side-panel-opt {
+    width: 100%;
+    height: 8rem;
+    position: relative;
+    transition: 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .side-panel-fill {
+    fill: getRGB($secondary);
+    stroke: getRGB($secondary);
+    stroke: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    opacity: 0;
+    transition: 0.5s ease;
+    z-index: 0;
+  }
+
+  .side-panel-cnt {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    p {
+      margin-top: 0.5rem;
+    }
+  }
+  .active {
+    color: getRGB($primary);
+
+    > .side-panel-fill {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}

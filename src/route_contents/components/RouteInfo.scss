@@ -1,0 +1,20 @@
+@import "../../index.scss";
+
+.route-info {
+  padding: 1rem 0.25rem;
+  transition: 0.5s ease;
+
+  .path-tree-link {
+    text-decoration: none;
+    padding: 0.25rem 0.75rem 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 2rem 10rem 10rem 2rem;
+    background-color: getRGBA($primary, 0.25);
+    color: getRGB($primary);
+  }
+
+  .active-link {
+    background-color: getThemeColorA(pdefault, 0.125);
+    color: getRGB($alternate);
+  }
+}

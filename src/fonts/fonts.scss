@@ -1,0 +1,33 @@
+/* Font for Montserrat Alternatives */
+
+
+@font-face {
+    font-family: 'ma';
+    src: url(Montserrat_Alternates/MontserratAlternates-Black.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'ma';
+    src: url(Montserrat_Alternates/MontserratAlternates-SemiBold.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'ma';
+    src: url(Montserrat_Alternates/MontserratAlternates-Regular.ttf);
+    font-weight: 100;
+}
+
+
+/* Font for Ubuntu Mono */
+
+@font-face {
+    font-family: 'um';
+    src: url(Ubuntu_Mono/UbuntuMono-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'um';
+    src: url(Ubuntu_Mono/UbuntuMono-Regular.ttf);
+    font-weight: 400;
+}

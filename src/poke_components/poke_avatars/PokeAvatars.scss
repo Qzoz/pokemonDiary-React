@@ -1,0 +1,48 @@
+@import "../../index.scss";
+
+.avatar-container {
+  margin: 1rem 0;
+
+  .avatar-image-cont {
+    border-radius: 100%;
+    border: 2px solid getThemeColor(pdefault);
+    overflow: hidden;
+    background-color: getRGBA($secondary, 0.5);
+    transition: 0.5s ease-in-out;
+
+    .avatar-image {
+      height: 100%;
+      width: 100%;
+      transition: 0.8s ease-in;
+    }
+    &:hover {
+      border-radius: 10%;
+      .avatar-image {
+          transform: scale(1.075);
+      }
+    }
+  }
+  .avt-size-3 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .avt-size-2 {
+    height: 11rem;
+    width: 11rem;
+  }
+  .avt-size-1 {
+    height: 12rem;
+    width: 12rem;
+  }
+  .avatar-title {
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    background-color: getThemeColor(pdefault);
+    color: getRGBA($secondary, 0.9);
+    font-size: 1.125rem;
+  }
+  .avater-info:hover {
+    color: getRGB($primary);
+  }
+}

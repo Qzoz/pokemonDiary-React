@@ -1,0 +1,163 @@
+@import "../../index.scss";
+
+.type-card {
+  min-width: 210px;
+  width: 210px;
+  margin: 0.5rem;
+  border-radius: 2.5rem;
+  box-shadow: 0px 0px 4px getRGBA($alternate, 0.75);
+  overflow: hidden;
+  transition: 0.4s ease;
+
+  &:hover {
+    box-shadow: 0px 0px 4px 2px getRGBA($alternate, 0.5);
+    .type-name {
+      color: getRGB($alternate);
+      .type-info-btn {
+        color: getRGBA($alternate, 0.85);
+      }
+    }
+  }
+}
+
+.type-head {
+  text-align: center;
+  padding: 1rem 0;
+
+  .type-image-cont {
+    display: inline-block;
+    height: 128px;
+    width: 128px;
+    overflow: hidden;
+    border: 0.25rem solid getThemeColor(pdefault);
+    border-radius: 100%;
+
+    .type-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .type-name {
+    margin: 0.25rem 0;
+    color: getRGB($secondary);
+    font-size: 1.5rem;
+    transition: 0.5s ease;
+    .type-info-btn {
+      text-decoration: none;
+      color: getRGBA($secondary, 0.85);
+      transition: 0.4s ease;
+    }
+    .type-info-btn:hover {
+      color: getThemeColorA(pdefault, 0.75);
+    }
+  }
+  .type-poke-btn {
+    display: inline-block;
+    text-decoration: none;
+    margin: 1rem 0;
+    padding: 0.75rem 1.25rem;
+    font-family: $font-montserrat-alt;
+    border-radius: 1rem;
+    color: getRGB($secondary);
+    transition: 0.5s ease;
+  }
+}
+
+@mixin gettTypeMixins($theme-name) {
+  $backOpacity: 0.6;
+  $backHoverOpacity: 0.6;
+  background-color: getThemeColorA($theme-name, $backHoverOpacity);
+  &.shade-on-hover {
+    &:hover {
+      // background: linear-gradient(235deg, 
+      //   getThemeColorA($theme-name, $backOpacity),
+      //   getRGBA($secondary, 0.5)
+      // );
+      background-color: getThemeColorA($theme-name, $backHoverOpacity - 0.4);
+      .type-poke-btn {
+        background-color: getThemeColorA($theme-name, 0.5);
+      }
+    }
+    .type-poke-btn {
+      background-color: getThemeColorA($theme-name, 0.25);
+      border: 2px solid getThemeColorA($theme-name, 1);
+      &:hover {
+        background-color: getRGB($secondary);
+        color: getThemeColor($theme-name);
+      }
+    }
+  }
+}
+
+.type-normal {
+  $theme-name: pnormal;
+  @include gettTypeMixins($theme-name);
+}
+.type-fighting {
+  $theme-name: pfighting;
+  @include gettTypeMixins($theme-name);
+}
+.type-flying {
+  $theme-name: pflying;
+  @include gettTypeMixins($theme-name);
+}
+.type-poison {
+  $theme-name: ppoison;
+  @include gettTypeMixins($theme-name);
+}
+.type-ground {
+  $theme-name: pground;
+  @include gettTypeMixins($theme-name);
+}
+.type-rock {
+  $theme-name: prock;
+  @include gettTypeMixins($theme-name);
+}
+.type-bug {
+  $theme-name: pbug;
+  @include gettTypeMixins($theme-name);
+}
+.type-steel {
+  $theme-name: psteel;
+  @include gettTypeMixins($theme-name);
+}
+.type-ghost {
+  $theme-name: pghost;
+  @include gettTypeMixins($theme-name);
+}
+.type-fire {
+  $theme-name: pfire;
+  @include gettTypeMixins($theme-name);
+}
+.type-water {
+  $theme-name: pwater;
+  @include gettTypeMixins($theme-name);
+}
+.type-grass {
+  $theme-name: pgrass;
+  @include gettTypeMixins($theme-name);
+}
+.type-electric {
+  $theme-name: pelectric;
+  @include gettTypeMixins($theme-name);
+}
+.type-psychic {
+  $theme-name: ppsychic;
+  @include gettTypeMixins($theme-name);
+}
+.type-ice {
+  $theme-name: pice;
+  @include gettTypeMixins($theme-name);
+}
+.type-dragon {
+  $theme-name: pdragon;
+  @include gettTypeMixins($theme-name);
+}
+.type-dark {
+  $theme-name: pdark;
+  @include gettTypeMixins($theme-name);
+}
+.type-fairy {
+  $theme-name: pfairy;
+  @include gettTypeMixins($theme-name);
+}

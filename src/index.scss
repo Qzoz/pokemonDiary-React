@@ -1,0 +1,66 @@
+$themeColors: (
+  pdefault: "0, 0, 0",
+  pnormal: "107, 107, 107",
+  pfighting: "243, 26, 116",
+  pflying: "123, 159, 206",
+  ppoison: "201, 70, 201",
+  pground: "184, 99, 19",
+  prock: "148, 124, 16",
+  pbug: "169, 185, 42",
+  pghost: "94, 75, 124",
+  psteel: "143, 143, 173",
+  pfire: "255, 136, 51",
+  pwater: "71, 161, 247",
+  pgrass: "74, 201, 11",
+  pelectric: "230, 190, 14",
+  ppsychic: "238, 84, 84",
+  pice: "83, 201, 201",
+  pdragon: "36, 92, 211",
+  pdark: "75, 57, 46",
+  pfairy: "245, 67, 185",
+);
+
+// $themeColorsT: (
+//   pdefault: #000000,
+//   pnormal: #6b6b6b,
+//   pfighting: #f31a74,
+//   pflying: #7b9fce,
+//   ppoison: #c946c9,
+//   pground: #b86313,
+//   prock: #947c10,
+//   pbug: #a9b92a,
+//   pghost: #5e4b7c,
+//   psteel: #8f8fad,
+//   pfire: #ff8833,
+//   pwater: #47a1f7,
+//   pgrass: #4ac90b,
+//   pelectric: #e6be0e,
+//   ppsychic: #ee5454,
+//   pice: #53c9c9,
+//   pdragon: #245cd3,
+//   pdark: #4b392e,
+//   pfairy: #f543b9,
+// );
+
+@function getRGB($cl) {
+  @return #{'rgb('+$cl+')'};
+}
+
+@function getRGBA($cl, $op) {
+  @return #{'rgba('+$cl+', '+$op+')'};
+}
+
+@function getThemeColor($name) {
+  @return getRGB(map-get($themeColors, $name));
+}
+
+@function getThemeColorA($name, $op) {
+  @return getRGBA(map-get($themeColors, $name), $op);
+}
+
+$primary: var(--cl-primary);
+$secondary: var(--cl-secondary);
+$alternate: var(--cl-alternate);
+
+$font-ubuntu-mono: 'um';
+$font-montserrat-alt: 'ma';

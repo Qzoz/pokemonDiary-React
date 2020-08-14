@@ -1,0 +1,39 @@
+@import "./index.scss";
+
+:root {
+  --cl-primary: 0, 0, 0;
+  --cl-secondary: 255, 255, 255;
+  --cl-alternate: 136, 136, 136;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100vh;
+  overflow: hidden;
+  font-family: $font-montserrat-alt;
+}
+
+button {
+  font-family: $font-montserrat-alt;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: getRGBA($primary, 0.25);
+}
+::-webkit-scrollbar-thumb {
+  background: getRGB($primary);
+}
+
+.container-all {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}

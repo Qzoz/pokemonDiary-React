@@ -1,0 +1,126 @@
+@import "../../index.scss";
+
+$break-flg-1: 650px;
+$break-row-1: 900px;
+$break-mobile-1: 426px;
+
+.modal-container {
+  position: fixed;
+  font-family: $font-montserrat-alt;
+  top: 0;
+  height: 100vh;
+  z-index: 15000;
+  transition: 0.5s ease;
+  background-color: getRGB($secondary);
+  color: getRGB($primary);
+
+  .modal-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+
+    .modal-close {
+      margin: 1rem;
+      font-size: 2.5rem;
+    }
+  }
+
+  .modal-content {
+    position: relative;
+    top: 100%;
+    width: 100%;
+    height: 0;
+    transition: 0.5s ease;
+    overflow: auto;
+    padding: 1rem 0;
+
+    &.toped-scrollable {
+      top: 0;
+    }
+    &.opened {
+      height: calc(100% - 4.5rem);
+    }
+  }
+
+  &.closed {
+    right: 0;
+    width: 0;
+    opacity: 0;
+  }
+  &.opened {
+    left: 0;
+    width: 100vw;
+    opacity: 1;
+  }
+}
+
+.modal-content::-webkit-scrollbar {
+  background: getRGBA($primary, 0.25);
+}
+
+.poke-details {
+  width: 100%;
+  margin: 0 auto;
+
+  .poke-detail-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+
+    .poke-detail-col {
+      min-width: calc(20rem - 10px);
+      width: 50%;
+      overflow: hidden;
+      @media (max-width: $break-row-1) {
+        width: 90%;
+      }
+    }
+  }
+  @media (min-width: $break-flg-1) {
+    width: 90%;
+  }
+}
+
+.poke-detail-image-cont {
+  width: 90%;
+  min-width: 20rem;
+  min-height: 20rem;
+  border-radius: 5rem;
+  overflow: hidden;
+  background-color: getRGBA($primary, 0.125);
+
+  .poke-detail-image {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    transition: 5s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  @media (max-width: $break-row-1) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.poke-detail-basic {
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  @media (max-width: $break-mobile-1) {
+    padding: 0.5rem 0.25rem 2rem 0.25rem;
+  }
+}
+
+hr.poke-h-rule {
+  border: 0;
+  height: 4px;
+  background-color: getRGBA($primary, 0.5);
+  margin: 1.5rem auto;
+}

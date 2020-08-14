@@ -1,0 +1,153 @@
+@import "../../index.scss";
+
+$break-flg-1: 425px;
+
+.poke-detail-cont {
+  margin: 2rem 0;
+  padding: 0.25rem 0.5rem;
+
+  > h2 {
+    padding: 1rem 0.75rem;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 4px;
+      background-color: getRGBA($primary, 0.5);
+    }
+    &::before {
+      top: 0;
+      width: 80%;
+    }
+    &::after {
+      bottom: 0;
+      width: 30%;
+    }
+  }
+  > .left-settled {
+    text-align: left;
+    &::after,
+    &::before {
+      left: 0;
+    }
+  }
+  > .right-settled {
+    text-align: right;
+    &::after,
+    &::before {
+      right: 0;
+    }
+  }
+  @media (max-width: $break-flg-1 + 1px) {
+    padding: 0.25rem 0;
+  }
+}
+
+.poke-detail-type-holder {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.poke-detail-evolution-holder {
+  padding: 1rem 1.5rem;
+  @media (max-width: $break-flg-1 + 1px) {
+    padding: 2rem 0.25rem;
+  }
+}
+
+.poke-detail-varieties-holder {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .poke-variety-card {
+    > p {
+      font-size: 1.75rem;
+      text-align: center;
+      padding: 0 1rem 0.5rem;
+      border-radius: 0 0 2.5rem 2.5rem;
+      border-bottom: 2px solid getRGBA($primary, 0.8);
+
+      @media (max-width: $break-flg-1 + 1px) {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .poke-variety-image-cont {
+    min-width: 19rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5rem;
+    margin: 1rem 0;
+    background-color: getRGBA($primary, 0.125);
+    transition: 1s ease;
+
+    .poke-variety-image {
+      height: 100%;
+      width: 100%;
+      transition: 3s ease;
+    }
+
+    &:hover {
+      border-radius: 1rem;
+      .poke-variety-image {
+        transform: scale(1.05);
+      }
+    }
+    @media (min-width: $break-flg-1) {
+      width: 24rem;
+      height: 24rem;
+    }
+  }
+  @media (max-width: $break-flg-1 + 1px) {
+    padding: 2rem 0.25rem;
+  }
+}
+
+.poke-detail-stat-holder {
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .poke-detail-stat-cont {
+    padding: 0.5rem;
+    min-width: 19rem;
+    width: 100%;
+
+    @media (min-width: 550px) {
+      width: 80%;
+    }
+
+    @media (min-width: 800px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1200px) {
+      width: 33%;
+    }
+
+    @media (max-width: 325px) {
+      padding: 0.5rem 0.1rem;
+    }
+
+    &.total-stat {
+      width: 100%;
+    }
+  }
+  @media (max-width: $break-flg-1) {
+    padding: 1.5rem 0.125rem;
+  }
+}

@@ -1,0 +1,96 @@
+@import "../../index.scss";
+
+$warning-color: 241, 10, 10;
+
+.poke-error-container {
+  width: 100%;
+  margin-top: 1.5rem;
+  background: linear-gradient(
+    getRGBA($secondary, 0.125),
+    getRGBA($warning-color, 0.125),
+    getRGBA($warning-color, 0.125)
+  );
+  color: getRGBA($warning-color, 0.75);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .poke-error-elem {
+    font-size: 3.4rem;
+    @media (min-width: 450px) {
+      font-size: 4.5rem;
+    }
+    .poke-error-icon {
+      animation: blink-anim 0.5s ease infinite alternate;
+    }
+  }
+  .poke-error-box {
+    padding-top: 1.5rem;
+    font-size: 1rem;
+    @media (min-width: 450px) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.if-no-retry {
+  background: linear-gradient(
+    getRGBA($secondary, 0.125),
+    getRGBA($warning-color, 0.125),
+    getRGBA($warning-color, 0.125),
+    getRGBA($secondary, 0.125),
+  );
+  margin-bottom: 1.5rem;
+}
+
+.poke-retry-container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    getRGBA($warning-color, 0.125),
+    getRGBA($primary, 0.125),
+    getRGBA($secondary, 0.125)
+  );
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  div {
+    padding: 0.75rem 0;
+
+    p {
+      color: getRGB($primary);
+    }
+    button {
+      border: 0;
+      outline: 0;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      background-color: getRGBA($primary, 0.9);
+      color: getRGB($secondary);
+      transition: 0.4s ease;
+
+      &:hover {
+        background-color: getRGBA($primary, 0.6);
+      }
+      &:active {
+        background-color: getRGBA($primary, 0.125);
+      }
+    }
+  }
+}
+
+@keyframes blink-anim {
+  from {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
